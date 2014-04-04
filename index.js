@@ -28,7 +28,14 @@ function ViewModel() {
     };
 
     self.checkEndDate = function () {
-        return true;
+        var date = self.future(),
+            parsed = Date.parse(date);
+
+        if (/[a-z]+/i.test(date)) {
+            return true;
+        }
+
+        return Date.now() < parsed;
     }
 }
 
