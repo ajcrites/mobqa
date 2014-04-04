@@ -1,5 +1,18 @@
+<meta charset="utf-8">
 <link rel=stylesheet type=text/css href=index.css>
 
+<div class=alert data-bind="css: { danger: acceptStatus() === false, accept: acceptStatus() === true }, text: acceptStatus() ? 'Accepted' : 'Rejected'"></div>
 <div class=container>
-    <input>
+    <label>
+        <span>Input a date in the past</span>
+        <input placeholder="dd/mm/yyyy" data-bind="value: past">
+    </label>
+    <label>
+        <span>Input a date in the future</span>
+        <input placeholder="dd/mm/yyyy" data-bind="value: future">
+    </label>
+    <input type=submit data-bind="click: checkDates">
 </div>
+
+<script src=//cdnjs.cloudflare.com/ajax/libs/knockout/3.1.0/knockout-min.js></script>
+<script src=index.js></script>

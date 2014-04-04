@@ -1,3 +1,57 @@
+html, body {
+    height: 100%;
+}
+body {
+    background: url(http://mobschool.mobiquityinc.com/images/chalkboard.jpg) no-repeat center;
+    background-size: 100% 100%;
+    font-size: 200%;
+    color: white;
+    font-family: 'Century Gothic', 'Avant Garde Gothic', 'Avant Garde', 'URW Gothic L', helvetica, sans-serif;
+    overflow: hidden;
+}
+label {
+    display: block;
+    margin-bottom: 20px;
+}
+label span {
+    display: inline-block;
+    width: 400px;
+    text-align: left;
+    vertical-align: middle;
+}
+input {
+    height: 40px;
+    vertical-align: middle;
+    font-family: "Helvetica Neue", sans-serif;
+    font-size: 100%;
+    outline: 0;
+    border-radius: 8px;
+    transition: all .3s;
+}
+input:focus {
+    background-color: #FFFFCC;
+    box-shadow: 0px 0px 4px 1px aqua;
+}
+input[type=submit] {
+    color: white;
+    background-color: green;
+    border-radius: 8px;
+    border: 0;
+    padding: 3px;
+    padding-left: 10px;
+    padding-right: 10px;
+    height: 50px;
+    box-sizing: border-box;
+    box-shadow: 2px 2px rgba(255, 255, 255, .4);
+    transition: none;
+}
+input[type=submit]:active {
+    box-shadow: inset 2px 2px rgba(0, 0, 0, .4);
+    padding-top: 7px;
+    padding-bottom: 1px;
+    padding-left: 12px;
+    padding-right: 8px;
+}
 .container {
     position: absolute;
     top: 50%;
@@ -5,4 +59,35 @@
     text-align: center;
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
+}
+.alert {
+    width: 15%;
+    transition: all .5s;
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    border-radius: 10px;
+    padding: 5px;
+    text-align: right;
+}
+.danger, .accept {
+    top: 25%;
+    opacity: 1;
+}
+.accept::before {
+    content:  "\2713";
+    float: left;
+}
+.danger {
+    background-color: red;
+}
+.danger::before {
+    content: "✗";
+    float: left;
+}
+.accept {
+    background-color: green;
 }
